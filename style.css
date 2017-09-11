@@ -1,0 +1,28 @@
+[contenteditable] {
+    border: 1px solid #000;
+    margin: 0.4em 0;
+    line-height: 1.4em;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+
+img {
+    vertical-align: top;
+    max-height: 1.4em;
+    max-width: 1.4em;
+}
+
+#messages {
+    height: 350px;
+    overflow: scroll;
+     overflow-x: hidden;
+}
+
+#messages div:nth-of-type(2n) {
+    background-color: #ddd;
+    padding: 5px 10px;
+}
+
+#messages div {
+    padding: 5px 10px;
+}
