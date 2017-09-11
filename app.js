@@ -12,6 +12,7 @@ function escapeSpecialChars(regex) {
 // display all emojis which can be used
 function addEmojis() {
     var emojiDiv = document.getElementById('all-emojis');
+    emojiDiv.innerHTML = "";
     for (i in map) {
         var img = document.createElement('img');
         img.src = map[i];
