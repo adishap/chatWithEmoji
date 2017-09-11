@@ -29,11 +29,20 @@ document.getElementById('textarea').addEventListener("keyup", function(event) {
         msgDiv.appendChild(div);
         this.innerHTML = "";
     } else {
-        // replce for all emoji
+        // replace for all emoji
         for (var i in map) {
             var regex = new RegExp(escapeSpecialChars(i), 'gim');
+            // check if emoji is present or not
             if (regex.test(this.innerHTML)) {
                 this.innerHTML = this.innerHTML.replace(regex, "<img src='" + map[i] + "'>");
+                this.appendChild(document.createTextNode(""));
+                var textNode = this.childNodes[2];
+                var range = document.createRange();
+                range.setStart(textNode, 0);
+                range.setEnd(textNode, 0);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
             }
         }
     }
